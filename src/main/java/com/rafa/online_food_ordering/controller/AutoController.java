@@ -24,7 +24,7 @@ import com.rafa.online_food_ordering.repository.CartRepository;
 import com.rafa.online_food_ordering.repository.UserRepository;
 import com.rafa.online_food_ordering.request.LoginRequest;
 import com.rafa.online_food_ordering.response.AuthResponse;
-import com.rafa.online_food_ordering.service.CustomerUserDetailsService;
+import com.rafa.online_food_ordering.service.CustomizeUserDetailsService;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
@@ -41,7 +41,7 @@ public class AutoController {
     private JwtProvider jwtProvider;
 
     @Autowired
-    private CustomerUserDetailsService customerUserDetailsService;
+    private CustomizeUserDetailsService customerUserDetailsService;
 
     @Autowired
     private CartRepository cartRepository;

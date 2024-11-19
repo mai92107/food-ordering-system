@@ -46,7 +46,7 @@ public class RestaurantController {
 
         userService.findUserByJwtToken(jwt);
         List<Restaurant> restaurants = restaurantService.getAllRestaurant();
-
+        System.out.println("尋找餐廳");
         return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
 

@@ -51,6 +51,10 @@ public class CategoryServiceImp implements CategoryService {
         categoryRepository.deleteById(id);
     }
 
-    
+    @Override
+    public Category findCategoryByCategoryId(Long id) {
+        return categoryRepository.findById(id).get();
+    }
+
 
 }

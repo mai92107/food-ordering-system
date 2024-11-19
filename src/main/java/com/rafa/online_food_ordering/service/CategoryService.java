@@ -14,4 +14,5 @@ public interface CategoryService {
 
     public void removeCategoryById(Long id) throws Exception;
 
+    public Category findCategoryByCategoryId(Long id);
 }

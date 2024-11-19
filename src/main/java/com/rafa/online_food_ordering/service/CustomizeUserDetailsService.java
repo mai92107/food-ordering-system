@@ -16,7 +16,7 @@ import com.rafa.online_food_ordering.model.User;
 import com.rafa.online_food_ordering.repository.UserRepository;
 
 @Service
-public class CustomerUserDetailsService implements UserDetailsService {
+public class CustomizeUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -25,7 +25,8 @@ public class CustomerUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(username);
         if (user == null) {
-            throw new UsernameNotFoundException("user not found with email..." + username);
+            throw new UsernameNotFoundException("user not found with email..." +
+                    username);
         }
 
         USER_ROLE role = user.getRole();
@@ -34,7 +35,8 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
         authorities.add(new SimpleGrantedAuthority(role.toString()));
 
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(user.getEmail(),
+                user.getPassword(), authorities);
     }
 
 }

@@ -41,9 +41,11 @@ public class AdminFoodController {
             @RequestHeader("Authorization") String jwt) throws Exception {
 
         userService.findUserByJwtToken(jwt);
-        Restaurant restaurant = restaurantService.findRestaurantById(req.getRestaurantId());
 
-        Food food = foodService.createFood(req, req.getCategory(), restaurant);
+        Restaurant restaurant = restaurantService.findRestaurantById(req.getRestaurantId());
+        System.out.println("我要建立的食物是"+req);
+
+        Food food = foodService.createFood(req, req.getCategory().getId(), restaurant);
 
         return new ResponseEntity<>(food, HttpStatus.CREATED);
 

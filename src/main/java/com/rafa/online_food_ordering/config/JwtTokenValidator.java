@@ -45,6 +45,7 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
                 System.out.println("Claims: " + claims);
             } catch (Exception e) {
+                System.out.println("提供的token為"+jwt);
                 throw new BadCredentialsException("invalid token...");
             }
         }

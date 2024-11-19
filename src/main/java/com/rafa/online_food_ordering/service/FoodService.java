@@ -9,7 +9,7 @@ import com.rafa.online_food_ordering.request.CreateFoodRequest;
 
 public interface FoodService {
 
-    public Food createFood(CreateFoodRequest req, Category category, Restaurant restaurant);
+    public Food createFood(CreateFoodRequest req, Long categoryId, Restaurant restaurant);
 
     public void deleteFood(Long id) throws Exception;
 
